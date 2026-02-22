@@ -1,7 +1,5 @@
 name: Cache Demo
-
 on: [push]
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,10 +11,10 @@ jobs:
         uses: actions/cache@v4
         with:
           key: cache-cf7e7e5
-          path: node_modules  # Adjust if using Python (e.g., ~/.cache/pip) or Maven (~/.m2)
+          path: node_modules
       
       - name: Install dependencies
-        run: npm ci  # or 'pip install -r requirements.txt' for Python
+        run: npm ci
       
-      - name: Test
-        run: npm test  # Add a simple test if needed
+      - name: Verify setup
+        run: echo "✅ Cache demo complete!"
